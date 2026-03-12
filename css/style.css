@@ -11,6 +11,8 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap");
+
 html {
   color: #222;
   font-size: 1em;
@@ -83,6 +85,143 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+
+:root {
+  color-scheme: light;
+  --bg-dark: #0d0f12;
+  --bg-mid: #171a20;
+  --bg-light: #222731;
+  --accent: #f7d788;
+  --accent-strong: #f4b860;
+  --text-main: #f7f5f0;
+  --text-muted: #a2a7b4;
+  --panel-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  --pixel-font: "Press Start 2P", "VT323", "Courier New", monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: var(--pixel-font), monospace;
+  background: radial-gradient(circle at top, #242a35 0%, #0d0f12 55%);
+  color: var(--text-main);
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.viewport {
+  width: min(960px, 100%);
+  display: grid;
+  place-items: center;
+}
+
+.scene {
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.scene.is-active {
+  display: flex;
+}
+
+.scene--menu .menu-frame {
+  width: min(520px, 100%);
+  background: linear-gradient(160deg, rgba(34, 39, 49, 0.9) 0%, rgba(13, 15, 18, 0.98) 100%);
+  border: 2px solid rgba(247, 215, 136, 0.45);
+  box-shadow: var(--panel-shadow);
+  padding: 32px 24px 28px;
+  text-align: center;
+}
+
+.menu-title {
+  width: min(420px, 100%);
+  height: auto;
+  margin-bottom: 24px;
+  image-rendering: pixelated;
+}
+
+.menu-actions {
+  display: grid;
+  gap: 16px;
+  justify-items: center;
+}
+
+.menu-button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.12s ease, filter 0.12s ease;
+}
+
+.menu-button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 6px;
+}
+
+.menu-button img {
+  width: min(300px, 100%);
+  height: auto;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.35));
+}
+
+.menu-button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.07);
+}
+
+.menu-hint {
+  margin: 20px 0 0;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.scene--game .game-frame {
+  width: min(960px, 100%);
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+}
+
+#game-canvas {
+  width: min(90vw, 960px);
+  height: auto;
+  background: #0b0e13;
+  border: 2px solid rgba(247, 215, 136, 0.3);
+  box-shadow: var(--panel-shadow);
+  image-rendering: pixelated;
+}
+
+.game-hint {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .menu-frame {
+    padding: 24px 16px;
+  }
+
+  .menu-hint {
+    font-size: 0.6rem;
+  }
+}
 
 /* ==========================================================================
    Helper classes
@@ -244,4 +383,3 @@ textarea {
     page-break-after: avoid;
   }
 }
-
