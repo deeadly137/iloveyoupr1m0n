@@ -27,16 +27,23 @@
     <main class="viewport" aria-live="polite">
       <section id="main-menu" class="scene scene--menu is-active" aria-label="Menu principal">
         <div class="menu-frame">
-          <img class="menu-title" src="img/title.png" alt="I Love You Primon">
-          <div class="menu-actions">
-            <button class="menu-button" type="button" data-action="start">
-              <img src="img/start-game.png" alt="Start Game">
-            </button>
-            <button class="menu-button" type="button" data-action="options">
-              <img src="img/game-options.png" alt="Options">
-            </button>
+          <div class="menu-layout">
+            <div class="menu-hero">
+              <img class="menu-title-char" src="img/title-char.png" alt="Personagem do título">
+            </div>
+            <div class="menu-panel">
+              <img class="menu-title" src="img/title.png" alt="I Love You Primon">
+              <div class="menu-actions">
+                <button class="menu-button" type="button" data-action="start">
+                  <img src="img/template-start.png" alt="Start Game">
+                </button>
+                <button class="menu-button" type="button" data-action="options">
+                  <img src="img/game-options.png" alt="Options">
+                </button>
+              </div>
+              <p class="menu-hint">Pressione Enter para começar</p>
+            </div>
           </div>
-          <p class="menu-hint">Pressione Enter para começar</p>
         </div>
       </section>
 
