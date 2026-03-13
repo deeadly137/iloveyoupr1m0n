@@ -105,6 +105,10 @@ textarea {
   box-sizing: border-box;
 }
 
+img {
+  image-rendering: pixelated;
+}
+
 body {
   min-height: 100vh;
   margin: 0;
@@ -156,7 +160,7 @@ body {
 .menu-layout {
   height: 100%;
   display: grid;
-  grid-template-columns: minmax(160px, 1fr) minmax(260px, 1fr);
+  grid-template-columns: minmax(260px, 1.1fr) minmax(260px, 0.9fr);
   gap: clamp(16px, 4vw, 48px);
   align-items: start;
 }
@@ -174,18 +178,18 @@ body {
   align-content: start;
   gap: 18px;
   justify-self: end;
+  align-self: start;
 }
 
 .menu-title {
   width: min(420px, 100%);
   height: auto;
-  image-rendering: pixelated;
 }
 
 .menu-title-char {
-  width: min(320px, 60vw);
+  width: min(750px, 60vw);
+  max-width: 750px;
   height: auto;
-  image-rendering: pixelated;
 }
 
 .menu-actions {
@@ -210,7 +214,6 @@ body {
 .menu-button img {
   width: min(300px, 100%);
   height: auto;
-  image-rendering: pixelated;
   filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.35));
 }
 
